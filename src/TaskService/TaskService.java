@@ -29,7 +29,12 @@ public class TaskService {
 	       }
 	       return false;
 	   }
+	
 	public Object add(String taskID, String taskName, String description) {
+		return null;
+	}
+	
+	public Object remove(String taskID, String taskName, String description) {
 		return null;
 	}
 }

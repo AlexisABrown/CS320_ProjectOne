@@ -1,7 +1,6 @@
 package ContactServiceTests;
 
 import static org.junit.jupiter.api.Assertions.*;
-import ContactService.Contact;
 import ContactService.ContactService;
 
 
