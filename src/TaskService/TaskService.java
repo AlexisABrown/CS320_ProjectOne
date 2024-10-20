@@ -17,6 +17,18 @@ public class TaskService {
 	public TaskService() {
 		taskList = new ArrayList<>();
 	}
+	
+	private Task searchForTask(String taskID) throws Exception {
+	    int index = 0;
+	    while (index < taskList.size()) {
+	      if (taskID.equals(taskList.get(index).getTaskID())) {
+	        return taskList.get(index);
+	      }
+	      index++;
+	    }
+	    throw new Exception("The Task does not exist!");
+	  }
+	
 	public boolean update(String taskID, String taskName, String description) {
 	       for (Task t : taskList) {
 	           if (t.getTaskID().equals(taskID)) {
@@ -34,7 +46,8 @@ public class TaskService {
 		return null;
 	}
 	
-	public Object remove(String taskID, String taskName, String description) {
-		return null;
+	public void remove(String taskID, String taskName, String description) throws Exception {
+		searchForTask(taskID);
+		taskList.remove(taskID);
 	}
 }
